@@ -9,10 +9,9 @@ Created on Aug 13, 2020
 import os
 import urllib.request
 from html.parser import HTMLParser
-from urllib.request import Request, urlopen
-
 import tkinter as tk
 from tkinter import Menu, scrolledtext, ttk
+from urllib.request import Request, urlopen
 
 import PIL.Image
 import PIL.ImageTk
