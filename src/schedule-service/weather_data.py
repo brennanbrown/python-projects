@@ -27,9 +27,9 @@ weather_data_tags_dict = {
 import urllib.request
 
 def get_weather_data(station_id='KLAX'):
-    url_general = 'http://www.weather.gov/xml/current_obs/{}.xml'
+    url_general = 'https://www.weather.gov/xml/current_obs/{}.xml'
     url = url_general.format(station_id)
-    request = urllib.request.urlopen( url )
+    request = urllib.request.urlopen(url, timeout=10)
     content = request.read().decode()
 
     # Using ElementTree to retrieve specific tags from the xml
