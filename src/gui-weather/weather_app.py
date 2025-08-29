@@ -7,24 +7,24 @@ Created on Aug 13, 2020
 # IMPORTS
 # ===========
 import os
-
-try:
-    from API_key import OWM_API_KEY  # optional local module
-except Exception:
-    OWM_API_KEY = os.getenv("OWM_API_KEY", "")
-
-import tkinter as tk
 import urllib.request
 from html.parser import HTMLParser
-from tkinter import Menu
-from tkinter import scrolledtext
-from tkinter import ttk
 from urllib.request import Request, urlopen
+
+import tkinter as tk
+from tkinter import Menu, scrolledtext, ttk
 
 import PIL.Image
 import PIL.ImageTk
+
 from services.noaa import get_noaa_current_obs
 from services.owm import get_open_weather_data as owm_fetch
+
+# Optional local module for API key; fallback to env var
+try:
+    from API_key import OWM_API_KEY  # type: ignore  # optional local module
+except Exception:
+    OWM_API_KEY = os.getenv("OWM_API_KEY", "")
 
 # ============
 # FUNCTIONS
