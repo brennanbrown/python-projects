@@ -39,6 +39,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - `favicon.svg`: Added custom favicon.
 - SEO/Share: Added canonical URL and Open Graph/Twitter meta tags.
 - `README.md`: Revamped with modern overview, quickstart, project run instructions, tooling/quality, and links.
+ - UI fixes: Prevent code block overflow within project cards; update footer to state MIT license.
 
 ### Tooling
 - `pyproject.toml`: Migrated Ruff to `[tool.ruff.lint]` sections; enabled quotes rule (`Q`) aligned with Black; preserved excludes and line length.

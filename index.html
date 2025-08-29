@@ -58,7 +58,28 @@
     .card p { margin: 0 0 14px; color: var(--muted); min-height: 56px; }
     .meta { font-size: 13px; color: var(--muted); margin-top: 8px; }
     footer { margin: 36px 0 10px; color: var(--muted); font-size: 14px; text-align: center; }
-    code, pre { background: #0f1634; color: #b7c3ff; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; padding: 2px 6px; }
+    code, pre { background: #0f1634; color: #b7c3ff; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; }
+    /* Prevent code blocks from overflowing cards */
+    pre { 
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: pre;
+      -webkit-overflow-scrolling: touch;
+      padding: 12px;
+      margin: 8px 0;
+    }
+    pre code {
+      display: block;
+      white-space: pre; /* keep horizontal scroll instead of wrapping */
+      padding: 0; /* padding handled by pre */
+    }
+    /* Inline code remains compact */
+    :not(pre) > code {
+      padding: 2px 6px;
+    }
     .steps { margin-top: 10px; }
     .steps li { margin: 6px 0; }
   </style>
@@ -228,7 +249,7 @@ python src/example_oop.py</code></pre>
     </section>
 
     <footer>
-      © <span id="year"></span> Brennan Brown — <a href="https://github.com/brennanbrown">@brennanbrown</a>
+      © <span id="year"></span> Brennan Brown — Code licensed under <a href="LICENSE">MIT</a> — <a href="https://github.com/brennanbrown">@brennanbrown</a>
     </footer>
   </div>
   <script>
