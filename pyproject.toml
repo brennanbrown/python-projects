@@ -1,0 +1,29 @@
+[tool.black]
+line-length = 100
+target-version = ["py311", "py312", "py313"]
+extend-exclude = "src/tdd/|src/schedule-service/"
+
+[tool.ruff]
+line-length = 100
+exclude = [".venv", "build", "dist", "src/tdd/", "src/schedule-service/"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "Q"]
+ignore = []
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-single-line = false
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "double"
+docstring-quotes = "double"
+multiline-quotes = "double"
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+
