@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Projects by Brennan Brown</title>
+  <meta name="description" content="A curated collection of Python projects demonstrating testing, GUI, services, and design patterns." />
+  <link rel="canonical" href="https://brennanbrown.github.io/python-projects/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brennanbrown.github.io/python-projects/" />
+  <meta property="og:title" content="Python Projects by Brennan Brown" />
+  <meta property="og:description" content="Production-ready Python mini-projects with tests, CI, and modern tooling." />
+  <meta property="og:image" content="https://brennanbrown.ca/images/hero/hero-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Python Projects by Brennan Brown" />
+  <meta name="twitter:description" content="Production-ready Python mini-projects with tests, CI, and modern tooling." />
+  <meta name="twitter:image" content="https://brennanbrown.ca/images/hero/hero-image.jpg" />
+  <meta name="theme-color" content="#0b1021" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1021;
+      --panel: #121932;
+      --muted: #9aa4bf;
+      --text: #e9ecf8;
+      --brand: #5b8cff;
+      --brand-2: #7af0e3;
+      --ok: #33d69f;
+      --warn: #f4c95d;
+      --danger: #ff6b6b;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: radial-gradient(1200px 1200px at 20% -10%, #1a245a 0%, var(--bg) 45%), var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; padding: 24px; margin: 0 auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0 8px; }
+    header .brand { font-weight: 700; font-size: 20px; letter-spacing: .2px; }
+    header nav a { margin-left: 16px; color: var(--muted); }
+    .hero { margin: 24px 0 40px; padding: 28px; background: linear-gradient(135deg, rgba(91,140,255,.2), rgba(122,240,227,.08)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; }
+    .hero h1 { margin: 0 0 8px; font-size: 28px; }
+    .hero p { margin: 0; color: var(--muted); max-width: 75ch; }
+    .avatar { width: 96px; height: 96px; border-radius: 50%; border: 2px solid rgba(255,255,255,.2); box-shadow: 0 6px 20px rgba(0,0,0,.35); object-fit: cover; }
+    .cta-row { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: #1a2143; color: var(--text); text-decoration: none; transition: transform .05s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: linear-gradient(135deg, #5b8cff, #7af0e3); color: #0b1021; font-weight: 700; border: none; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { grid-column: span 12; background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+    @media (min-width: 760px) { .card { grid-column: span 6; } }
+    @media (min-width: 1040px) { .card { grid-column: span 4; } }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0 0 14px; color: var(--muted); min-height: 56px; }
+    .meta { font-size: 13px; color: var(--muted); margin-top: 8px; }
+    footer { margin: 36px 0 10px; color: var(--muted); font-size: 14px; text-align: center; }
+    code, pre { background: #0f1634; color: #b7c3ff; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; padding: 2px 6px; }
+    .steps { margin-top: 10px; }
+    .steps li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">python-projects</div>
+      <nav>
+        <a href="https://github.com/brennanbrown/python-projects">GitHub Repo</a>
+        <a href="https://github.com/brennanbrown/python-projects/archive/refs/heads/main.zip">Download ZIP</a>
+        <a href="https://brennanbrown.ca/Resume.pdf">Resume</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Production-ready Python mini-projects</h1>
+        <p>
+          A curated collection of Python projects showcasing test-driven development, GUI design with Tkinter, service integrations, and classic design patterns. Built for reliability and maintainability with modern tooling (pytest, ruff, black, mypy, GitHub Actions).
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://github.com/brennanbrown/python-projects">View on GitHub</a>
+          <a class="btn" href="#getting-started">Getting Started</a>
+          <a class="btn" href="#projects">Browse Projects</a>
+          <a class="btn" href="https://brennanbrown.ca/Resume.pdf">Download Resume</a>
+        </div>
+      </div>
+      <img class="avatar" src="https://brennanbrown.ca/images/hero/hero-image.jpg" alt="Headshot of Brennan Brown" />
+    </section>
+
+    <section id="getting-started" class="card" style="grid-column: span 12">
+      <h2 style="margin-top: 0">Quickstart</h2>
+      <ol class="steps">
+        <li>Clone the repository:
+          <pre><code>git clone https://github.com/brennanbrown/python-projects.git
+cd python-projects</code></pre>
+        </li>
+        <li>Create a virtual environment and install dependencies:
+          <pre><code>python3 -m venv .venv
+source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+pip install -r requirements.txt
+pip install -r requirements-dev.txt</code></pre>
+        </li>
+        <li>Run tests to verify everything is green:
+          <pre><code>pytest -q</code></pre>
+        </li>
+      </ol>
+      <div class="meta">Python 3.11/3.12+ recommended. Linting and tests run via GitHub Actions.</div>
+    </section>
+
+    <h2 id="projects" style="margin: 28px 0 8px">Projects</h2>
+    <div class="grid">
+      <!-- GUI Weather App -->
+      <article class="card">
+        <h3>GUI Weather App (Tkinter)</h3>
+        <p>Cross-platform Tkinter GUI that fetches live weather data from NOAA/NWS and OpenWeatherMap. Robust timeouts, HTTPS, user-agent headers, and a clean service layer.</p>
+        <div class="meta">Path: <code>src/gui-weather/</code></div>
+        <div class="cta-row" style="margin-top: 10px">
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/tree/main/src/gui-weather">View Code</a>
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/archive/refs/heads/main.zip">Download</a>
+        </div>
+        <details style="margin-top: 12px">
+          <summary>How to run</summary>
+          <ol class="steps">
+            <li>Set your OpenWeatherMap API key (optional but recommended):
+              <pre><code>export OWM_API_KEY=&lt;your_api_key&gt;  # Windows: set OWM_API_KEY=&lt;your_api_key&gt;</code></pre>
+            </li>
+            <li>Launch the app:
+              <pre><code>python src/gui-weather/weather_app.py</code></pre>
+            </li>
+          </ol>
+        </details>
+      </article>
+
+      <!-- Schedule Service -->
+      <article class="card">
+        <h3>Schedule Service</h3>
+        <p>Generates a simple HTML weather report and demonstrates basic scheduling and email sending. Focuses on job orchestration and reporting.</p>
+        <div class="meta">Path: <code>src/schedule-service/</code></div>
+        <div class="cta-row" style="margin-top: 10px">
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/tree/main/src/schedule-service">View Code</a>
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/archive/refs/heads/main.zip">Download</a>
+        </div>
+        <details style="margin-top: 12px">
+          <summary>How to run</summary>
+          <ol class="steps">
+            <li>Create a weather report HTML file:
+              <pre><code>python src/schedule-service/create_html.py</code></pre>
+            </li>
+            <li>(Optional) Try the scheduler demo:
+              <pre><code>python src/schedule-service/task_scheduler.py</code></pre>
+            </li>
+          </ol>
+        </details>
+      </article>
+
+      <!-- TDD Examples -->
+      <article class="card">
+        <h3>TDD Examples</h3>
+        <p>Small, focused exercises demonstrating unit testing, fixtures, monkeypatching, and mocking with pytest and unittest.mock.</p>
+        <div class="meta">Path: <code>src/tdd/</code></div>
+        <div class="cta-row" style="margin-top: 10px">
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/tree/main/src/tdd">View Code</a>
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/archive/refs/heads/main.zip">Download</a>
+        </div>
+        <details style="margin-top: 12px">
+          <summary>How to run</summary>
+          <ol class="steps">
+            <li>Run the test suite:
+              <pre><code>pytest -q</code></pre>
+            </li>
+          </ol>
+        </details>
+      </article>
+
+      <!-- Design Patterns -->
+      <article class="card">
+        <h3>Design Patterns: Maze</h3>
+        <p>Demonstrates design principles through a maze implementation. Useful for discussing architecture and extensibility in interviews.</p>
+        <div class="meta">Path: <code>src/design-patterns/</code></div>
+        <div class="cta-row" style="margin-top: 10px">
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/tree/main/src/design-patterns">View Code</a>
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/archive/refs/heads/main.zip">Download</a>
+        </div>
+        <details style="margin-top: 12px">
+          <summary>How to run</summary>
+          <ol class="steps">
+            <li>Run the module (if present) or explore classes in an interactive shell:
+              <pre><code>python -m src.design-patterns.maze  # if a __main__ is provided</code></pre>
+            </li>
+          </ol>
+        </details>
+      </article>
+
+      <!-- Breakpoints & OOP Examples -->
+      <article class="card">
+        <h3>Breakpoint & OOP Examples</h3>
+        <p>Small scripts for debugging and OOP demonstration. Useful to show workflow when stepping through code and reasoning about class design.</p>
+        <div class="meta">Paths: <code>src/breakpoints/</code>, <code>src/example_oop.py</code></div>
+        <div class="cta-row" style="margin-top: 10px">
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/tree/main/src/breakpoints">View Code</a>
+          <a class="btn" href="https://github.com/brennanbrown/python-projects/blob/main/src/example_oop.py">Example OOP</a>
+        </div>
+        <details style="margin-top: 12px">
+          <summary>How to run</summary>
+          <ol class="steps">
+            <li>Run scripts directly:
+              <pre><code>python src/breakpoints/breakpoint_inheritance.py
+python src/breakpoints/breakpoint_two_classes.py
+python src/example_oop.py</code></pre>
+            </li>
+          </ol>
+        </details>
+      </article>
+    </div>
+
+    <section class="card" style="margin-top: 16px">
+      <h2 style="margin-top:0">Tooling & Quality</h2>
+      <ul class="steps">
+        <li><b>Testing:</b> pytest with clear example suites.</li>
+        <li><b>Formatting:</b> Black (100 cols), EditorConfig for consistent editors.</li>
+        <li><b>Linting:</b> Ruff (E, F, I, UP, Q) with import sorting.</li>
+        <li><b>CI:</b> GitHub Actions for linting and testing across modern Python versions.</li>
+        <li><b>Security/Network:</b> HTTPS, timeouts, user-agent headers, retry/backoff for robustness.</li>
+      </ul>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Brennan Brown — <a href="https://github.com/brennanbrown">@brennanbrown</a>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
