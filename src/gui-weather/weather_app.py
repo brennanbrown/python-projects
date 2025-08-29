@@ -6,15 +6,14 @@ Created on Aug 13, 2020
 # ===========
 # IMPORTS
 # ===========
-import os
-import urllib.request
 from html.parser import HTMLParser
+import os
 import tkinter as tk
 from tkinter import Menu, scrolledtext, ttk
+import urllib.request
 from urllib.request import Request, urlopen
 
-import PIL.Image
-import PIL.ImageTk
+from PIL import Image, ImageTk
 
 from services.noaa import get_noaa_current_obs
 from services.owm import get_open_weather_data as owm_fetch
@@ -359,16 +358,16 @@ class WeatherHTMLParser(HTMLParser):
 weather_images_frame = ttk.LabelFrame(tab_3, text=" Weather Images ")
 weather_images_frame.grid(column=0, row=0, padx=8, pady=4)
 
-img = PIL.Image.open("img/few_clouds.png")
-photo = PIL.ImageTk.PhotoImage(img)
+img = Image.open("img/few_clouds.png")
+photo = ImageTk.PhotoImage(img)
 ttk.Label(weather_images_frame, image=photo).grid(column=0, row=0)
 
-img = PIL.Image.open("img/night_few_clouds.png")
-photo1 = PIL.ImageTk.PhotoImage(img)
+img = Image.open("img/night_few_clouds.png")
+photo1 = ImageTk.PhotoImage(img)
 ttk.Label(weather_images_frame, image=photo1).grid(column=1, row=0)
 
-img = PIL.Image.open("img/night_fair.png")
-photo2 = PIL.ImageTk.PhotoImage(img)
+img = Image.open("img/night_fair.png")
+photo2 = ImageTk.PhotoImage(img)
 ttk.Label(weather_images_frame, image=photo2).grid(column=2, row=0)
 
 
@@ -501,8 +500,8 @@ def get_open_weather_data(city):
         url_icon = f"https://openweathermap.org/img/w/{weather_icon}.png"
         req = Request(url_icon, headers={"User-Agent": "python-projects/gui"})
         ico = urlopen(req, timeout=10)
-        open_im = PIL.Image.open(ico)
-        open_photo = PIL.ImageTk.PhotoImage(open_im)
+        open_im = Image.open(ico)
+        open_photo = ImageTk.PhotoImage(open_im)
         # Prevent garbage collection of the image reference
         open_weather_cities_frame.open_photo = open_photo
         ttk.Label(open_weather_cities_frame, image=open_photo).grid(column=0, row=1)
